@@ -20,10 +20,10 @@ console.log("Starting flint, please wait...");
 
 flint.on("initialized", function() {
   console.log("Flint initialized successfully! [Press CTRL-C to quit]");
-  scheduler = schedule.scheduleJob({hour: 1, minute: 42}, function(){
+  scheduler = schedule.scheduleJob({hour: 1, minute: 48}, function(){
     console.log('Time for tea!');
     let bot = new Bot(Flint);
-    bot.say('time up...');
+    bot.dm('kokila.elangovan@siriuscom.com', 'hello time up...');
   });
 });
 
