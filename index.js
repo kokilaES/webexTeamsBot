@@ -9,6 +9,9 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json());
 const config = require("./secret.json");
+var schedule = require('node-schedule');
+
+var scheduler;
 
 // init flint
 var flint = new Flint(config);
@@ -17,6 +20,11 @@ console.log("Starting flint, please wait...");
 
 flint.on("initialized", function() {
   console.log("Flint initialized successfully! [Press CTRL-C to quit]");
+  scheduler = schedule.scheduleJob({hour: 1, minute: 42}, function(){
+    console.log('Time for tea!');
+    let bot = new Bot(Flint);
+    bot.say('time up...');
+  });
 });
 
 /****
@@ -29,7 +37,7 @@ ex User enters @botname /hello, the bot will write back
 */
 flint.hears('/hello', function(bot, trigger) {
   console.log("/hello fired");
-  bot.say('%s, you said hello to me!', trigger.personDisplayName);
+  bot.say('%s, you said hello to me!');
 });
 
 
