@@ -4,11 +4,7 @@
   "description": "Starter kit for creating a Cisco Spark bot",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && node --use_strict index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/valgaze/sparkbotstarter.git"
+    "start": "node index.js"
   },
   "keywords": [
     "Cisco",
@@ -16,10 +12,6 @@
   ],
   "author": "Victor Algaze",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/valgaze/sparkbotstarter/issues"
-  },
-  "homepage": "https://github.com/valgaze/sparkbotstarter#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
